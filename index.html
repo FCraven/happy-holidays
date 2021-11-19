@@ -16,12 +16,26 @@
 
 
   <a-scene embedded arjs>
+
     <a-assets>
+
       <a-asset-item id="christmas-tree-obj" src="./assets/models/55-ct/christmas-tree.obj"></a-asset-item>
+
       <a-asset-item id="christmas-tree-mtl" src="./assets/models/55-ct/christmas-tree-material.mtl"></a-asset-item>
+
+      <a-asset-item id='snow-field-gltf' src='./assets/models/snow-field/snow-field.gltf'></a-asset-item>
+
+      <a-asset-item id='snow-field-normal-map' src='./assets/models/snow-field/textures/snow_field_aerial_nor_gl_1k.jpg'></a-asset-item>
+
+      <a-asset-item id='snow-field-aoc-map' src='./assets/models/snow-field/textures/snow_field_aerial_col_1k.jpg'></a-asset-item>
+
     </a-assets>
 
-    <!-- Using the asset management system. -->
+    <a-plane src='#snow-field-gltf'
+    ambien-occlusion-map='#snow-field-aoc-map'
+    normal-map='#snow-field-normal-map'
+    rotation="-90 0 0"></a-plane>
+
     <a-obj-model src="#christmas-tree-obj"  mtl="#christmas-tree-mtl"
     position='0 0 0'
     scale='.05 .05 .05'></a-obj-model>
